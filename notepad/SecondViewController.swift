@@ -27,6 +27,8 @@ class SecondViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet var notetitle: UITextField!
     @IBOutlet var notes: UITextField!
     
+//    @IBOutlet var notes: UITextView!
+    
     @IBAction func addBtnClick(sender: AnyObject) {
         noteManager.addNote(notetitle.text!, desc: notes.text!)
         self.view.endEditing(true)

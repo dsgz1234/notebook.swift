@@ -52,6 +52,7 @@ class NoteManager: NSObject {
         try! db.run(alice.delete())
     }
     func loadData(){
+        notes.removeAll(keepCapacity: false)
         for user in try! db.prepare(notestable) {
             notes.append(note(name: user[notetitle], note: user[notedata],tag:notes.count))
         }

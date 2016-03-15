@@ -29,7 +29,7 @@ class FirstViewController: UITableViewController{
             forControlEvents: UIControlEvents.ValueChanged)
         refreshCTL.attributedTitle = NSAttributedString(string: "下拉刷新数据")
         tableview.addSubview(refreshCTL)
-        
+        noteManager.initdb()
         noteManager.loadData()
     }
     func refresh(){
@@ -69,6 +69,7 @@ class FirstViewController: UITableViewController{
 //        noteshow.inittext(thenote.name, fild: thenote.note)
 //        selectRow=indexPath.row;
 //        self.navigationController?.presentViewController(vc!, animated: true, completion: nil)
+        
         
     }
     
