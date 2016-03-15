@@ -7,15 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F107F049E852DA411AC46D6 /* Pods_notepad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5EA68F30CC9341379F9549C /* Pods_notepad.framework */; };
+		ED24FB831C9665240053C856 /* NoteShowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED24FB821C9665230053C856 /* NoteShowController.swift */; };
 		ED52270C1C90FD44007AD56D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52270B1C90FD44007AD56D /* AppDelegate.swift */; };
 		ED52270E1C90FD44007AD56D /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52270D1C90FD44007AD56D /* FirstViewController.swift */; };
 		ED5227101C90FD44007AD56D /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52270F1C90FD44007AD56D /* SecondViewController.swift */; };
 		ED5227131C90FD44007AD56D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED5227111C90FD44007AD56D /* Main.storyboard */; };
 		ED5227151C90FD44007AD56D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED5227141C90FD44007AD56D /* Assets.xcassets */; };
 		ED5227181C90FD44007AD56D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED5227161C90FD44007AD56D /* LaunchScreen.storyboard */; };
+		ED5227201C90FE70007AD56D /* NoteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52271F1C90FE70007AD56D /* NoteManager.swift */; };
+		ED7461411C97A88C007881DD /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED7461401C97A88C007881DD /* SQLite.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7CAE9D3524902B215FB696C8 /* Pods-notepad.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-notepad.debug.xcconfig"; path = "Pods/Target Support Files/Pods-notepad/Pods-notepad.debug.xcconfig"; sourceTree = "<group>"; };
+		96B12E0E9F80EBAEDEA2585A /* Pods-notepad.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-notepad.release.xcconfig"; path = "Pods/Target Support Files/Pods-notepad/Pods-notepad.release.xcconfig"; sourceTree = "<group>"; };
+		A5EA68F30CC9341379F9549C /* Pods_notepad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_notepad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED24FB821C9665230053C856 /* NoteShowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteShowController.swift; sourceTree = "<group>"; };
 		ED5227081C90FD44007AD56D /* notepad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = notepad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED52270B1C90FD44007AD56D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED52270D1C90FD44007AD56D /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +32,9 @@
 		ED5227141C90FD44007AD56D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED5227171C90FD44007AD56D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED5227191C90FD44007AD56D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED52271F1C90FE70007AD56D /* NoteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteManager.swift; sourceTree = "<group>"; };
+		ED74613F1C97A4C3007881DD /* Bridge-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridge-Header.h"; sourceTree = "<group>"; };
+		ED7461401C97A88C007881DD /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = "Pods/../build/Debug-iphoneos/SQLite.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +42,40 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED7461411C97A88C007881DD /* SQLite.framework in Frameworks */,
+				6F107F049E852DA411AC46D6 /* Pods_notepad.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F3C895B934F11869F35C03D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED7461401C97A88C007881DD /* SQLite.framework */,
+				A5EA68F30CC9341379F9549C /* Pods_notepad.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		80792F879E216A53AD80B7D1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7CAE9D3524902B215FB696C8 /* Pods-notepad.debug.xcconfig */,
+				96B12E0E9F80EBAEDEA2585A /* Pods-notepad.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		ED5226FF1C90FD44007AD56D = {
 			isa = PBXGroup;
 			children = (
+				ED74613F1C97A4C3007881DD /* Bridge-Header.h */,
 				ED52270A1C90FD44007AD56D /* notepad */,
 				ED5227091C90FD44007AD56D /* Products */,
+				80792F879E216A53AD80B7D1 /* Pods */,
+				7F3C895B934F11869F35C03D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,6 +93,8 @@
 				ED52270B1C90FD44007AD56D /* AppDelegate.swift */,
 				ED52270D1C90FD44007AD56D /* FirstViewController.swift */,
 				ED52270F1C90FD44007AD56D /* SecondViewController.swift */,
+				ED24FB821C9665230053C856 /* NoteShowController.swift */,
+				ED52271F1C90FE70007AD56D /* NoteManager.swift */,
 				ED5227111C90FD44007AD56D /* Main.storyboard */,
 				ED5227141C90FD44007AD56D /* Assets.xcassets */,
 				ED5227161C90FD44007AD56D /* LaunchScreen.storyboard */,
@@ -74,9 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED52271C1C90FD44007AD56D /* Build configuration list for PBXNativeTarget "notepad" */;
 			buildPhases = (
+				619ED36E9E5618D5BA22C2D3 /* Check Pods Manifest.lock */,
 				ED5227041C90FD44007AD56D /* Sources */,
 				ED5227051C90FD44007AD56D /* Frameworks */,
 				ED5227061C90FD44007AD56D /* Resources */,
+				0A15FF6B9E4497F600B357AB /* Embed Pods Frameworks */,
+				36D0C5CA2954634540072298 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -134,12 +173,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0A15FF6B9E4497F600B357AB /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-notepad/Pods-notepad-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		36D0C5CA2954634540072298 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-notepad/Pods-notepad-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		619ED36E9E5618D5BA22C2D3 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		ED5227041C90FD44007AD56D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				ED5227101C90FD44007AD56D /* SecondViewController.swift in Sources */,
+				ED24FB831C9665240053C856 /* NoteShowController.swift in Sources */,
+				ED5227201C90FE70007AD56D /* NoteManager.swift in Sources */,
 				ED52270C1C90FD44007AD56D /* AppDelegate.swift in Sources */,
 				ED52270E1C90FD44007AD56D /* FirstViewController.swift in Sources */,
 			);
@@ -250,23 +339,37 @@
 		};
 		ED52271D1C90FD44007AD56D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CAE9D3524902B215FB696C8 /* Pods-notepad.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = notepad/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = aware.test.notepad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Debug;
 		};
 		ED52271E1C90FD44007AD56D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96B12E0E9F80EBAEDEA2585A /* Pods-notepad.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = notepad/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = aware.test.notepad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};
@@ -289,6 +392,7 @@
 				ED52271E1C90FD44007AD56D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
