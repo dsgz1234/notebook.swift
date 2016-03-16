@@ -11,7 +11,7 @@ import UIKit
 class FirstViewController: UITableViewController{
     @IBOutlet var tableview: UITableView!
     var refreshCTL = UIRefreshControl()
-    var selectRow:Int?=nil; 
+    var selectRow:Int?=nil;
     
     let sb = UIStoryboard(name: "Main", bundle:nil)
     var vc: UIViewController?=nil;
@@ -52,7 +52,7 @@ class FirstViewController: UITableViewController{
         
         cell.textLabel?.text = noteManager.notes[indexPath.row].name
         cell.detailTextLabel?.text = noteManager.notes[indexPath.row].note
-        cell.tag = noteManager.notes[indexPath.row].tag
+        //        cell.tag = noteManager.notes[indexPath.row].tag
         return cell
     }
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -62,16 +62,29 @@ class FirstViewController: UITableViewController{
         
         tableview.reloadData()
     }
+    @IBAction func backToView(segue:UIStoryboardSegue) {
+        dismissViewControllerAnimated(true, completion: nil)
+        let update = (segue.sourceViewController as! NoteShowController).element
+        noteManager.update(update!)
+        noteManager.loadData()
+    }
     //on touch
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
         //        sb.in
-//        var thenote : note = noteManager.notes[indexPath.row];
-//        noteshow.inittext(thenote.name, fild: thenote.note)
-//        selectRow=indexPath.row;
-//        self.navigationController?.presentViewController(vc!, animated: true, completion: nil)
+        //        var thenote : note = noteManager.notes[indexPath.row];
+        //        noteshow.inittext(thenote.name, fild: thenote.note)
+        //        selectRow=indexPath.row;
+        //        self.navigationController?.presentViewController(vc!, animated: true, completion: nil)
+        //        self.presentViewController(vc!, animated: true, completion: nil)
+        self.performSegueWithIdentifier("edit", sender: self)
         
         
     }
-    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let indexPath = self.tableView.indexPathForSelectedRow
+        let element = noteManager.notes[(indexPath?.row)!]
+        let elementDetailViewController = segue.destinationViewController as! NoteShowController
+        elementDetailViewController.element=element;
+    }
     
 }

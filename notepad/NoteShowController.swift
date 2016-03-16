@@ -9,23 +9,37 @@
 import UIKit
 import Foundation
 
-class NoteShowController : UIViewController{
+class NoteShowController : UIViewController,UITextViewDelegate{
     @IBOutlet var notetitle: UITextView!
     @IBOutlet var notefild: UITextView!
+    var element:note?=nil
+    
     override func viewDidLoad() {
-        if let index = (self.presentingViewController as! FirstViewController).selectRow{
-            let thenote : note = noteManager.notes[index];
-            inittext(thenote.name, fild: thenote.note);
-        }
+        //        if let index = (self.presentingViewController as! FirstViewController).selectRow{
+        //            let thenote : note = noteManager.notes[index];
+        //            inittext(thenote.name, fild: thenote.note);
+        //        }
+        //        if let temp=element{
+        settext(element!)
+        //        }
         
     }
     
-    func inittext(title:String,fild:String){
-        self.notetitle.text=title
-        self.notefild.text=fild
+    func settext(fild:note){
+        self.notetitle.text=fild.name
+        self.notefild.text=fild.note
     }
-    @IBAction func backToView(segue:UIStoryboardSegue) {
-        dismissViewControllerAnimated(true, completion: nil)
+    func textViewDidBeginEditing(textView: UITextView) {
+        //        self.element?.note = textView.
     }
+    func textViewDidChange(textView: UITextView) {
+        if textView.restorationIdentifier == "title"{
+            self.element?.name=textView.text;
+        }
+        if textView.restorationIdentifier == "fild"{
+            self.element?.note=textView.text;
+        }
+    }
+    
     
 }

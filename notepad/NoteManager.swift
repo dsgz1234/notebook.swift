@@ -26,23 +26,30 @@ class NoteManager: NSObject {
     let id = Expression<Int64>("id")
     let notetitle = Expression<String>("notetitle")
     let notedata = Expression<String>("notedata")
-
+    
     
     func initdb(){
         try! db.run(notestable.create(ifNotExists: true){ t in
             t.column(id, primaryKey: .Autoincrement)
             t.column(notetitle)
             t.column(notedata)
-        })
+            })
         
     }
-
+    
     
     func addNote(name: String, desc: String) {
-        notes.append(note(name: name, note: desc,tag:notes.count))
         initdb();
         let insert = notestable.insert(notetitle <- name, notedata <- desc)
-        try! db.run(insert)
+        print(insert.asSQL());
+        do{
+            let rowid = try! db.run(insert)
+            notes.append(note(name: name, note: desc,tag:rowid))
+            
+            print(rowid)
+        }catch{
+            
+        }
     }
     
     func deleteNote(index:Int){
@@ -51,10 +58,15 @@ class NoteManager: NSObject {
         let alice = notestable.filter(id==Int64(tag))
         try! db.run(alice.delete())
     }
+    
+    func update(update:note){
+        try! db.run(notestable.filter(id==Int64(update.tag)).update(notetitle <- update.name,notedata <- update.note))
+    }
+    
     func loadData(){
         notes.removeAll(keepCapacity: false)
         for user in try! db.prepare(notestable) {
-            notes.append(note(name: user[notetitle], note: user[notedata],tag:notes.count))
+            notes.append(note(name: user[notetitle], note: user[notedata],tag:user[id]))
         }
     }
     
@@ -62,6 +74,6 @@ class NoteManager: NSObject {
 struct note{
     var name:String = "new note";
     var note:String = "new note";
-    var tag:Int;
+    var tag:Int64;
 }
 
