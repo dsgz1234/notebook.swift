@@ -48,8 +48,8 @@ class FirstViewController: UITableViewController{
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) ->UITableViewCell {
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Default")
-        
+        //let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Default")
+        let cell = tableView.dequeueReusableCellWithIdentifier("NoteCell")! as UITableViewCell
         cell.textLabel?.text = noteManager.notes[indexPath.row].name
         cell.detailTextLabel?.text = noteManager.notes[indexPath.row].note
         //        cell.tag = noteManager.notes[indexPath.row].tag

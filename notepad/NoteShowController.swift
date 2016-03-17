@@ -22,6 +22,15 @@ class NoteShowController : UIViewController,UITextViewDelegate{
         //        if let temp=element{
         settext(element!)
         //        }
+        notetitle.layer.borderWidth = 1.2;
+        notetitle.layer.borderColor = UIColor.grayColor().CGColor
+        notetitle.layer.cornerRadius = 10.0
+//        notetitle.layer.masksToBounds = true
+        notefild.layer.borderWidth = 1.2;
+        notefild.layer.borderColor = UIColor.grayColor().CGColor
+        notefild.layer.cornerRadius = 10.0
+//        notefild.layer.masksToBounds = true
+
         
     }
     
