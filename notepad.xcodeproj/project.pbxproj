@@ -10,8 +10,8 @@
 		6F107F049E852DA411AC46D6 /* Pods_notepad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5EA68F30CC9341379F9549C /* Pods_notepad.framework */; };
 		ED24FB831C9665240053C856 /* NoteShowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED24FB821C9665230053C856 /* NoteShowController.swift */; };
 		ED52270C1C90FD44007AD56D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52270B1C90FD44007AD56D /* AppDelegate.swift */; };
-		ED52270E1C90FD44007AD56D /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52270D1C90FD44007AD56D /* FirstViewController.swift */; };
-		ED5227101C90FD44007AD56D /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52270F1C90FD44007AD56D /* SecondViewController.swift */; };
+		ED52270E1C90FD44007AD56D /* LIstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52270D1C90FD44007AD56D /* LIstViewController.swift */; };
+		ED5227101C90FD44007AD56D /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED52270F1C90FD44007AD56D /* AddViewController.swift */; };
 		ED5227131C90FD44007AD56D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED5227111C90FD44007AD56D /* Main.storyboard */; };
 		ED5227151C90FD44007AD56D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED5227141C90FD44007AD56D /* Assets.xcassets */; };
 		ED5227181C90FD44007AD56D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED5227161C90FD44007AD56D /* LaunchScreen.storyboard */; };
@@ -26,8 +26,8 @@
 		ED24FB821C9665230053C856 /* NoteShowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteShowController.swift; sourceTree = "<group>"; };
 		ED5227081C90FD44007AD56D /* notepad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = notepad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED52270B1C90FD44007AD56D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ED52270D1C90FD44007AD56D /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		ED52270F1C90FD44007AD56D /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		ED52270D1C90FD44007AD56D /* LIstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIstViewController.swift; sourceTree = "<group>"; };
+		ED52270F1C90FD44007AD56D /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		ED5227121C90FD44007AD56D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ED5227141C90FD44007AD56D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED5227171C90FD44007AD56D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -91,8 +91,8 @@
 			isa = PBXGroup;
 			children = (
 				ED52270B1C90FD44007AD56D /* AppDelegate.swift */,
-				ED52270D1C90FD44007AD56D /* FirstViewController.swift */,
-				ED52270F1C90FD44007AD56D /* SecondViewController.swift */,
+				ED52270D1C90FD44007AD56D /* LIstViewController.swift */,
+				ED52270F1C90FD44007AD56D /* AddViewController.swift */,
 				ED24FB821C9665230053C856 /* NoteShowController.swift */,
 				ED52271F1C90FE70007AD56D /* NoteManager.swift */,
 				ED5227111C90FD44007AD56D /* Main.storyboard */,
@@ -226,11 +226,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED5227101C90FD44007AD56D /* SecondViewController.swift in Sources */,
+				ED5227101C90FD44007AD56D /* AddViewController.swift in Sources */,
 				ED24FB831C9665240053C856 /* NoteShowController.swift in Sources */,
 				ED5227201C90FE70007AD56D /* NoteManager.swift in Sources */,
 				ED52270C1C90FD44007AD56D /* AppDelegate.swift in Sources */,
-				ED52270E1C90FD44007AD56D /* FirstViewController.swift in Sources */,
+				ED52270E1C90FD44007AD56D /* LIstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,7 +347,7 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = notepad/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = aware.test.notepad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -365,7 +365,7 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = notepad/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = aware.test.notepad;
 				PRODUCT_NAME = "$(TARGET_NAME)";

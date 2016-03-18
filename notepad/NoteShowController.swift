@@ -10,7 +10,8 @@ import UIKit
 import Foundation
 
 class NoteShowController : UIViewController,UITextViewDelegate{
-    @IBOutlet var notetitle: UITextView!
+    
+    @IBOutlet var notetitle: UITextField!
     @IBOutlet var notefild: UITextView!
     var element:note?=nil
     
@@ -37,9 +38,10 @@ class NoteShowController : UIViewController,UITextViewDelegate{
     func settext(fild:note){
         self.notetitle.text=fild.name
         self.notefild.text=fild.note
-    }
-    func textViewDidBeginEditing(textView: UITextView) {
-        //        self.element?.note = textView.
+        
+        
+        //let image = UIImageView(image: fild.image)
+        //self.notefild.addSubview(image)
     }
     func textViewDidChange(textView: UITextView) {
         if textView.restorationIdentifier == "title"{
@@ -48,6 +50,17 @@ class NoteShowController : UIViewController,UITextViewDelegate{
         if textView.restorationIdentifier == "fild"{
             self.element?.note=textView.text;
         }
+    }
+    @IBAction func backToDetial(segue:UIStoryboardSegue){
+        dismissViewControllerAnimated(true, completion: nil)
+        //segue.sourceViewController.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let iv = UIImageView(image: element?.image)
+        //iv.contentMode=UIViewContentMode.ScaleAspectFill
+        (segue.destinationViewController as UIViewController).view.subviews[0].addSubview(iv)
+
     }
     
     

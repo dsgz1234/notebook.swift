@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UITableViewController{
+class ListViewController: UITableViewController{
     @IBOutlet var tableview: UITableView!
     var refreshCTL = UIRefreshControl()
     var selectRow:Int?=nil;
@@ -29,7 +29,7 @@ class FirstViewController: UITableViewController{
             forControlEvents: UIControlEvents.ValueChanged)
         refreshCTL.attributedTitle = NSAttributedString(string: "下拉刷新数据")
         tableview.addSubview(refreshCTL)
-        noteManager.initdb()
+        //noteManager.initdb()
         noteManager.loadData()
     }
     func refresh(){
